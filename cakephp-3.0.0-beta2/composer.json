@@ -1,0 +1,6 @@
+{
+    "require": {
+		"friendsofcake/authenticate":"dev-cake3",			
+		"holt59/cakephp3-bootstrap3-helpers": "dev-master"
+    }
+}

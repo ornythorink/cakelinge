@@ -1,0 +1,6 @@
+{
+    "require": {
+		"friendsofcake/authenticate":"dev-cake3",			
+        "twbs/bootstrap": "~3.2"
+    }
+}

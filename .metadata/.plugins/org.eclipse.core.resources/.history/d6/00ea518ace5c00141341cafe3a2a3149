@@ -1,0 +1,6 @@
+{
+    "require": {
+        "cakephp/plugin-installer": "~0.0",
+        "cakephp/debug_kit": "~2.2"
+    }
+}

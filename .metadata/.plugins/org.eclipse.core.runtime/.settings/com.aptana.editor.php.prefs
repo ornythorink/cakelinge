@@ -1,0 +1,4 @@
+com.aptana.editor.php.turnedOffLibraries=
+com.aptana.editor.php.userLibraries=cake\:/var/www/html/projects/cakephp-3.0.0-beta2
+com.aptana.editor.php.workspaceDefaultLocale=fr_FR
+eclipse.preferences.version=1

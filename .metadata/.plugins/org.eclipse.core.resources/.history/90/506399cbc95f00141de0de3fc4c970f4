@@ -1,0 +1,19 @@
+<?php
+namespace App\Controller;
+
+use App\Controller\AppController;
+use Cake\Error\NotFoundException;
+use Cake\Event\Event;
+
+class WhiteListController extends AppController {
+
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->allow(array('add'));
+    }
+
+     public function index() {
+
+    }   
+}
+
