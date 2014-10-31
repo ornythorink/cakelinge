@@ -1,0 +1,7 @@
+<?php
+
+class Produit extends AppModel {
+        $res = $this->Produits->find('all',$params);
+        var_dump($res);
+    
+}

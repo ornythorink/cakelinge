@@ -1,0 +1,19 @@
+<?php
+namespace App\Controller;
+
+use App\Controller\AppController;
+
+class WhitelistController extends AppController {
+    
+    public $params = array(
+        'conditions' => array('source' => 'NET', 'status' => 'Validation'),
+        'fields' => array('id_produit', 'boutique', 'source' ,'categorie_marchand'), 
+        'group' => array('Model.champ'), 
+    );       
+    
+    public function index() {        
+        $this->Produit->find('all')
+    }   
+}
+
+

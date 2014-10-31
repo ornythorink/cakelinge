@@ -1,0 +1,16 @@
+<?php
+
+use Cake\Controller\ComponentRegistry;
+use Cake\ORM\TableRegistry;
+
+
+class Produit extends AppModel {       
+        
+        public function getNetaffWhiteList(){
+                $produits = TableRegistry::get('Produits');
+                $res= $this->Produits->find('all');
+                var_dump($res);    
+            
+        }
+    
+}

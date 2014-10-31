@@ -1,0 +1,15 @@
+<?php
+namespace App\Controller;
+
+use App\Controller\AppController;
+
+
+class WhitelistController extends AppController {
+
+    public function index() {        
+        $articles = TableRegistry::get('Articles');
+        $query = $articles->find('published')->find('recent');
+    }   
+}
+
+

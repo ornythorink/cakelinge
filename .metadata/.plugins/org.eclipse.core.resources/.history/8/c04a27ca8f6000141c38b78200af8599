@@ -1,0 +1,13 @@
+<?php
+
+class Produit extends AppModel {
+
+        
+        
+        public function getNetaffWhiteList(){
+                $res = $this->Produits->find('all',$params);
+                var_dump($res);    
+            
+        }
+    
+}

@@ -1,0 +1,20 @@
+<?php
+namespace App\Controller;
+
+use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
+
+class WhitelistController extends AppController {
+    
+    public function index(){
+        $this->getWhiteNetaff();
+    }
+
+    public function getWhiteNetaff() {
+        $produits = TableRegistry::get('Produits');        
+        $res = $produits->find('all');
+        return $res;
+    }   
+}
+
+

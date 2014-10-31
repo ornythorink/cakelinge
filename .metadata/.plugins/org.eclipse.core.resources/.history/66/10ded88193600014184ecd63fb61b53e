@@ -1,0 +1,18 @@
+<?php
+// src/Model/Table/UsersTable.php
+namespace App\Model\Table;
+
+use Cake\ORM\Table;
+use Cake\Validation\Validator;
+
+class ProduitsTable extends Table {
+    
+        public function getWhiteNetaff(){
+                $articles = TableRegistry::get('Articles');
+                $res= $this->Produits->find('all');
+                var_dump($res);  
+        }
+}
+
+$articles = TableRegistry::get('Articles');
+$query = $articles->find('getWhiteNetaff');
