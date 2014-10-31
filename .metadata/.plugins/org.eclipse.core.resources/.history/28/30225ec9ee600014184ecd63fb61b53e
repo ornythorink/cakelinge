@@ -15,8 +15,8 @@ class WhitelistController extends AppController {
 
     public function getWhiteNetaff() {
         $produit = TableRegistry::get('Produits');  
-        $produits = $produit->getWhiteNetaff(); 
-        return $produits; 
+        $produits = $produit->getWhiteNetaff();      
+
     }   
 }
 

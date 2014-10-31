@@ -8,8 +8,6 @@ use Cake\ORM\TableRegistry;
 
 class ProduitsTable extends Table {
 
-    public function getWhiteNetaff(){
-        $produits = TableRegistry::get('Produits'); 
         $query = $produits->find('all')->limit(10);
         
         foreach ($query as $key => $row) {
@@ -17,7 +15,7 @@ class ProduitsTable extends Table {
         }
         
         return $res;
-    }
+
 }
 
 
