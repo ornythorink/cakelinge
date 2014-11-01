@@ -6,18 +6,19 @@ use Cake\ORM\TableRegistry;
 
 class WhitelistController extends AppController {
     
+    public $paginate = array(
+        'limit' => 25,
+    );    
+    
+    public function intialize() {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }    
+    
     public function index(){
-        $hop = $this->getWhiteNetaff();
-        echo '<pre>';
-        var_dump($hop);
-        echo '</pre>';
+        $produit = TableRegistry::get('Produits'); 
+        $this->set('produits', $this->paginate(  $produit->getWhiteNetaff() ) );
     }
-
-    public function getWhiteNetaff() {
-        $produit = TableRegistry::get('Produits');  
-        $produits = $produit->getWhiteNetaff(); 
-        return $produits; 
-    }   
 }
 
 
