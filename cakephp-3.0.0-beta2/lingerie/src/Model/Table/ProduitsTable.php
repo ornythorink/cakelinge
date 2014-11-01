@@ -10,7 +10,7 @@ class ProduitsTable extends Table {
 
     public function getWhiteNetaff(){
         $produits = TableRegistry::get('Produits'); 
-        $query = $produits->find('all')->where( array('source =' => 'ZNX', 'status' => 'Validation') )->limit(100);
+        $query = $produits->find('all')->where( array('source =' => 'ZNX', 'status' => 'Validation') )->limit(1000);
         return $query;
     }
 }

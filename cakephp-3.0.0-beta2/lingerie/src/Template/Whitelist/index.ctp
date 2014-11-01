@@ -35,19 +35,6 @@
             <li class="active"><a href="#" data-replace-tmp-key="3b878279a04dc47d60932cb294d96259"><os-p key="3b878279a04dc47d60932cb294d96259">Overview</os-p></a></li>
             <li><a href="#" data-replace-tmp-key="c91c7b93c28cd18741b71f727ee81ee3"><os-p key="c91c7b93c28cd18741b71f727ee81ee3">Reports</os-p></a></li>
             <li><a href="#" data-replace-tmp-key="a768caa988605a2846599cf7e2d0c26a"><os-p key="a768caa988605a2846599cf7e2d0c26a">Analytics</os-p></a></li>
-            <li><a href="#" data-replace-tmp-key="0095a9fa74d1713e43e370a7d7846224"><os-p key="0095a9fa74d1713e43e370a7d7846224">Export</os-p></a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="" data-replace-tmp-key="79c78518e95143233fa5df0658e7234d"><os-p key="79c78518e95143233fa5df0658e7234d">Nav item</os-p></a></li>
-            <li><a href="" data-replace-tmp-key="e21eed53cdf03d61bf6892c7cc4153d9"><os-p key="e21eed53cdf03d61bf6892c7cc4153d9">Nav item again</os-p></a></li>
-            <li><a href="" data-replace-tmp-key="cfcda21e9e5629e04314fd2bff47aaf2"><os-p key="cfcda21e9e5629e04314fd2bff47aaf2">One more nav</os-p></a></li>
-            <li><a href="" data-replace-tmp-key="c4666f3f5693df54dd616dccff3cf2dc"><os-p key="c4666f3f5693df54dd616dccff3cf2dc">Another nav item</os-p></a></li>
-            <li><a href="" data-replace-tmp-key="b205b89d7999d974e36155f522a79f1b"><os-p key="b205b89d7999d974e36155f522a79f1b">More navigation</os-p></a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="" data-replace-tmp-key="e21eed53cdf03d61bf6892c7cc4153d9"><os-p key="e21eed53cdf03d61bf6892c7cc4153d9">Nav item again</os-p></a></li>
-            <li><a href="" data-replace-tmp-key="cfcda21e9e5629e04314fd2bff47aaf2"><os-p key="cfcda21e9e5629e04314fd2bff47aaf2">One more nav</os-p></a></li>
-            <li><a href="" data-replace-tmp-key="c4666f3f5693df54dd616dccff3cf2dc"><os-p key="c4666f3f5693df54dd616dccff3cf2dc">Another nav item</os-p></a></li>
           </ul>
         </div>
         <!-- end sidebar -->
@@ -75,10 +62,8 @@
                <?php endforeach; ?> 
               </tbody>
             </table>         
-       
-            
-            <div class="list-group list-group-horizontal">
-            <ul>                
+
+            <ul class="pagination pagination-lg pager" id="myPager">                
             <?php 
             
                 // the 'first' page button
@@ -92,7 +77,7 @@
                 }
                  
                 // the 'number' page buttons
-                echo $this->Paginator->numbers(array('modulus' => 2));
+                echo $this->Paginator->numbers(array('modulus' => 10));
                  
                 // for the 'next' button
                 if($this->Paginator->hasNext()){
@@ -102,8 +87,7 @@
                 // the 'last' page button
                 echo $this->Paginator->last("Last");
             ?> 
-            </ul>
-            </div>          
+            </ul>   
         
             ?>              
           </div>

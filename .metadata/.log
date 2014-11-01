@@ -6609,3 +6609,8 @@ Contains: The project description file (.project) for 'test' is missing.  This f
 !MESSAGE Errors occurred while refreshing resources with the local file system.
 !SUBENTRY 3 org.eclipse.core.resources 4 567 2014-11-01 15:22:53.873
 !MESSAGE The project description file (.project) for 'test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.resources 2 2 2014-11-01 15:38:59.049
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2014-11-01 15:38:59.049
+!MESSAGE The project description file (.project) for 'test' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

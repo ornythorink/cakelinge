@@ -9,6 +9,7 @@ class WhitelistController extends AppController {
     
     public $paginate = array(
         'limit' => 25,
+        'maxLimit' => 1000
     );  
     
     // Dans un controller.
