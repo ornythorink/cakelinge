@@ -8,9 +8,9 @@ use Cake\ORM\TableRegistry;
 
 class ProduitsTable extends Table {
 
-    public function getWhiteNetaff(){
+    public function getWhiteListBySource($source){
         $produits = TableRegistry::get('Produits'); 
-        $query = $produits->find('all')->where( array('source =' => 'ZNX', 'status' => 'Validation') )->limit(1000);
+        $query = $produits->find('all')->where( array('source =' => $source, 'status' => 'Validation') )->group('categorie_marchand')->limit(1000);
         return $query;
     }
 }

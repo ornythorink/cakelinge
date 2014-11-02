@@ -16,7 +16,8 @@ class WhitelistController extends AppController {
     public $helpers = array( 
         'Html',
         'Form',       
-        'Paginator'
+        'Paginator',
+        'Url'
     ); 
         
     public function intialize() {
@@ -25,8 +26,31 @@ class WhitelistController extends AppController {
     }    
     
     public function index(){
+        
+        $source = $this->request->query['source'];
+        
         $produit = TableRegistry::get('Produits'); 
-        $this->set('produits', $this->paginate(  $produit->getWhiteNetaff() ) );
+        $this->set('produits', $this->paginate(  $produit->getWhiteListBySource($source) ) );
+    }
+    
+    public function updateCategories(){
+            
+        $produit = TableRegistry::get('Produits');
+        $id = $this->request->data['id'];
+
+        
+        $firstArticle = $produit
+        ->find()
+        ->where(array('id_produit' => $id))
+        ->first();
+        
+        $query = $produit->query();
+        $query->update()
+            ->set(array('status' => 'Ok'))
+            ->where(array('categorie_marchand' => $firstArticle->categorie_marchand))
+            ->execute(); 
+                       
+        die('Ok');
     }
 }
 
