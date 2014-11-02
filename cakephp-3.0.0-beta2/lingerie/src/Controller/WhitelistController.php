@@ -5,7 +5,7 @@ use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 
 
-class WhitelistController extends AppController {
+class WhitelistController extends RestrictedZoneController {
     
     public $paginate = array(
         'limit' => 25,

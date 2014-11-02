@@ -5,7 +5,7 @@ use App\Controller\AppController;
 use Cake\Error\NotFoundException;
 use Cake\Event\Event;
 
-class UsersController extends AppController {
+class UsersController extends RestrictedZoneController {
 
     public function beforeFilter(Event $event) {
         parent::beforeFilter($event);

@@ -11,14 +11,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-replace-tmp-key="2938c7f7e560ed972f8a4f68e80ff834"><os-p key="2938c7f7e560ed972f8a4f68e80ff834">Dashboard</os-p></a></li>
-            <li><a href="#" data-replace-tmp-key="f4f70727dc34561dfde1a3c529b6205c"><os-p key="f4f70727dc34561dfde1a3c529b6205c">Settings</os-p></a></li>
-            <li><a href="#" data-replace-tmp-key="cce99c598cfdb9773ab041d54c3d973a"><os-p key="cce99c598cfdb9773ab041d54c3d973a">Profil</os-p></a></li>
-            <li><a href="#" data-replace-tmp-key="6a26f548831e6a8c26bfbbd9f6ec61e0"><os-p key="6a26f548831e6a8c26bfbbd9f6ec61e0">Aide</os-p></a></li>
+            <li><a href="<?php echo $this->Url->build(array("controller" => "users","action" => "logout")); ?>" data-replace-tmp-key="2938c7f7e560ed972f8a4f68e80ff834"><os-p key="2938c7f7e560ed972f8a4f68e80ff834">Deconnexion</os-p></a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="{{__2a37324bb4c331c859044121df3f576b__}}" data-translatable-string="Search..." data-translatable-key="2a37324bb4c331c859044121df3f576b">
-          </form>
         </div>
       </div>
     </div>

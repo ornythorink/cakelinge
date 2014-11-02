@@ -5,7 +5,7 @@ use App\Controller\AppController;
 use Cake\Error\NotFoundException;
 use Cake\Event\Event;
 
-class AdminController extends AppController {
+class AdminController extends RestrictedZoneController {
 
     public $helpers = [
         'Html' => [
