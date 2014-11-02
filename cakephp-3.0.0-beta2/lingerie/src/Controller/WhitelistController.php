@@ -44,12 +44,23 @@ class WhitelistController extends AppController {
         ->where(array('id_produit' => $id))
         ->first();
         
+        
+        
         $query = $produit->query();
         $query->update()
             ->set(array('status' => 'Ok'))
             ->where(array('categorie_marchand' => $firstArticle->categorie_marchand))
             ->execute(); 
-                       
+        
+        $whilelist = TableRegistry::get('Whitelistcategories');
+        
+        $values = array('id' => null, 'boutique' => $firstArticle->boutique, 'source' =>$firstArticle->source, 'category' => $firstArticle->categorie_marchand);
+
+        $query = $whilelist->query()
+        ->insert(array('id','boutique', 'source', 'category'))
+        ->values($values)
+        ->execute();
+        
         die('Ok');
     }
 }
