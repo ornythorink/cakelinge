@@ -1,9 +1,0 @@
-<?php
-
-echo $this->Html->label('My Label', 'primary') ;
-
-echo $this->Html->badge('1') ;
-echo $this->Html->badge('2') ;
-
-echo $this->Html->alert('This is a warning alert!') ;
-echo $this->Html->alert('This is a success alert!', 'success');

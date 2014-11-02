@@ -1,6 +1,0 @@
-{
-    "require": {
-        "friendsofcake/authenticate": "~1.0",
-        "twbs/bootstrap": "~3.2"
-    }
-}
