@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" data-replace-tmp-key="7adea0d9c77aabccd8bb67ae0a832d59"><os-p key="7adea0d9c77aabccd8bb67ae0a832d59">Nom du projet</os-p></a>
+          <a class="navbar-brand" href="<?php echo $this->Url->build(array("controller" => "admin","action" => "index")); ?>" data-replace-tmp-key="7adea0d9c77aabccd8bb67ae0a832d59"><os-p key="7adea0d9c77aabccd8bb67ae0a832d59">Lingerie</os-p></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
