@@ -19,9 +19,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 
 
+
     <!-- Custom styles for this template -->
     <?= $this->Html->css('theme.css') ?>
-    <?= $this->Html->css('mediaqueries.css') ?> 
+    <?= $this->Html->css('mediaqueries.css') ?>
+    <?= $this->Html->css('menu.css') ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="//getbootstrap.com/examples/dashboard/../../assets/js/ie-emulation-modes-warning.js"></script>
