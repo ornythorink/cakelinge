@@ -14,16 +14,11 @@
 					</div>
 					<div id="menu-user" class="col-xs-1 col-sm-4">
 						<ul>
-							<li><a href="/wtf">?</a></li>
-							<li><a href="/blog/">Blog</a></li>
-							<li class="login-box">
-								<a href="#">Login</a>
-							</li>
-
 							<li id="langues">
 								<span>fr</span>
-								<ul><li><a href="?lang=fr">fr</a></li><li><a href="?lang=en">en</a></li><li><a href="?lang=de">de</a></li><li><a href="?lang=pt">pt</a></li><li><a href="?lang=es">es</a></li></ul>							</li>
-
+								<ul><li><a href="?lang=fr">fr</a></li><li><a href="?lang=en">en</a></li>
+                                    <li><a href="?lang=de">de</a></li><li><a href="?lang=pt">pt</a>
+                                    </li><li><a href="?lang=es">es</a></li></ul>							</li>
 							<li  id="avatar-top">
 								<a href="#">
 									<span class="avatar login-box">
@@ -116,36 +111,58 @@
 
 <div id="main">
 	<div class="container">
-		<div class="row">
 
-			<div id="neeed" class="col-xs-12">
-				<div itemscope itemtype="http://schema.org/Product" class="prod   col-xs-6 col-sm-3 product " id="301102"  data-product="301102">
-					<a class="prod-img" href="http://fave.co/1rMBYTH" target="_blank" >
-						<img itemprop="image" src="core/cache/products/c60c38c21b7e12c4339cd8701de7f271.jpg" alt="REDValentino | Sac à main en cuir Snow White ©Disney | NET-A-PORTER.COM" />
-					</a>
-					<div class="price login-box"  ><span>440<span class="euro">€</span></span></div>
-					<span style="display:none;" itemprop="name">REDValentino | Sac à main en cuir Snow White ©Disney | NET-A-PORTER.COM</span>
-					<span style="display:none;" itemprop="url">http://fave.co/1rMBYTH</span>
-						<div class="prod-user">
-							<div class="avatar pull-left">
-								<a href="/marion_gatto_9" class="users">
-									<img src="core/cache/users/10170.jpg" alt="Marion Gatto" />
-								</a>
-							</div>
-							<a href="/marion_gatto_9" class="users">
-								Marion Gatto + 1				</a>
+        <div class="row">
+            <div class="col-md-4 poster" >
+                <img src="/webroot/img/soutien-gorge.jpg"  />
+            </div>
+            <div class="col-md-4 poster" >
+                <img src="/webroot/img/pyjama-femme2.jpg"  />
+            </div>
+            <div class="col-md-4 poster" >
+                <img src="/webroot/img/collant.jpg"  />
+            </div>
+        </div>
 
-							<a itemprop="brand" href="http://net-a-porter.com" target="_blank" class="url">
-								net-a-porter.com				</a>
-						</div>
-					</div>
-			</div>
-		</div>
+        <div class="row">
+            <section class="slide-show">
+                    <?php foreach($offres as $key => $value) : ?>
+
+                    <?php if($value->longimage != null): ?>
+                    <figure>
+                        <img src="<?php echo $value->longimage; ?>" />
+                        <figcaption>
+                            a caption.
+                        </figcaption>
+                    </figure>
+                    <?php elseif($value->mediumimage != null): ?>
+                    <figure>
+                        <img src="<?php echo $value->mediumimage; ?>" />
+                        <figcaption>
+                            a caption.
+                        </figcaption>
+                    </figure>
+                    <?php elseif($value->petiteimage != null): ?>
+                    <figure>
+                        <img src="<?php echo $value->petiteimage; ?>" />
+                        <figcaption>
+                            a caption.
+                        </figcaption>
+                    </figure>
+                    <?php endif; ?>
+
+                    <?php endforeach; ?>
+            </section>
+        </div>
 	</div>
 </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script class="os-tdn" type="text/javascript" src="//s3.amazonaws.com/oneskyapp.static/in-context/loader.min.js"></script>
-
+<?= $this->Html->script('figure-slider.min.js') ?>
+<script>
+    $( document ).ready(function() {
+        $( '.slide-show' ).figureSlider();
+    });
+</script>
