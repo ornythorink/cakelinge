@@ -123,46 +123,45 @@
                 <img src="/webroot/img/collant.jpg"  />
             </div>
         </div>
-
         <div class="row">
-            <section class="slide-show">
+        <!-- Carousel
+        ================================================== -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="jcarousel">
+                <ul>
                     <?php foreach($offres as $key => $value) : ?>
-
-                    <?php if($value->longimage != null): ?>
-                    <figure>
-                        <img src="<?php echo $value->longimage; ?>" />
-                        <figcaption>
-                            a caption.
-                        </figcaption>
-                    </figure>
-                    <?php elseif($value->mediumimage != null): ?>
-                    <figure>
-                        <img src="<?php echo $value->mediumimage; ?>" />
-                        <figcaption>
-                            a caption.
-                        </figcaption>
-                    </figure>
-                    <?php elseif($value->petiteimage != null): ?>
-                    <figure>
-                        <img src="<?php echo $value->petiteimage; ?>" />
-                        <figcaption>
-                            a caption.
-                        </figcaption>
-                    </figure>
-                    <?php endif; ?>
-
+                        <li><img src="<?php echo $value->longimage; ?>" /></li>
                     <?php endforeach; ?>
-            </section>
+                </ul>
+                     </div>
+                </div><!-- /.carousel -->
         </div>
-	</div>
+        <div class="row">
+            <div class="col-md-4 poster" >
+                <img src="/webroot/img/collant.jpg"  />
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<?= $this->Html->script('figure-slider.min.js') ?>
-<script>
-    $( document ).ready(function() {
-        $( '.slide-show' ).figureSlider();
-    });
-</script>
+<script src="/webroot/js/carrousel.js"></script>
+
+    <script>
+        $(function() {
+            $('.jcarousel')
+                    .jcarousel({
+                        // Core configuration goes here
+                    })
+                    .jcarouselAutoscroll({
+                        interval: 1000,
+                        target: '+=1',
+                        autostart: true,
+                        wrap: 'circular'
+                    })
+            ;
+        });
+    </script>

@@ -6,7 +6,10 @@ use Cake\Network\Http\Client;
 
 class HomeController extends AppController {
 
+    public $helpers = ['ImageModifier'];
+
 	public function index(){
+
 		$this->layout = 'home';
 
         $http = new Client(['host' => 'ornythorink.alwaysdata.net']);
@@ -33,6 +36,7 @@ class HomeController extends AppController {
             $tail = "]";
         }
 
+
         $produits = json_decode($response->body.$tail);
 
         foreach($produits as $image){
@@ -42,24 +46,9 @@ class HomeController extends AppController {
                 $image->mediumimage = $image->imagecache;
                 $image->petiteimage = $image->imagecache;
             }
-
-            $cache = false;
-            if($image->source != 'SDC'){
-                $cache = true;
-            }
-
-            if( ($image->longimage !== null &&  $image->longimage != '') && $image->imagecache  == null){
-                $image->longimage = $this->resizeImage($image->longimage, $cache);
-            } elseif ( ($image->mediumimage !== null &&  $image->mediumimage != '') && $image->imagecache  == null) {
-                $image->mediumimage = $this->resizeImage($image->mediumimage, $cache);
-            } elseif (  ($image->petiteimage !== null &&  $image->petiteimage != '')  && $image->imagecache  == null) {
-                $image->petiteimage = $this->resizeImage($image->petiteimage, $cache);
-            }
         }
 
         $this->set( 'offres', $produits);
-
-
 
 	}
 }

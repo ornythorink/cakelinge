@@ -24,6 +24,8 @@
     <?= $this->Html->css('theme.css') ?>
     <?= $this->Html->css('mediaqueries.css') ?>
     <?= $this->Html->css('menu.css') ?>
+    <?= $this->Html->css('carrousel.css') ?>
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -37,16 +39,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
-    .slide-show { border: 1px solid #c0392b; }
 
-    .slide-show figure { text-align: center }
-
-    .slide-show figcaption {
-    background-color: #c0392b;
-    color: white;
-    }
-    </style>
 </head>
 <body>
 <?= $this->fetch('content') ?>        
