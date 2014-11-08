@@ -25,6 +25,7 @@
     <?= $this->Html->css('mediaqueries.css') ?>
     <?= $this->Html->css('menu.css') ?>
     <?= $this->Html->css('carrousel.css') ?>
+    <?= $this->Html->css('simple-sidebar.css') ?>
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
