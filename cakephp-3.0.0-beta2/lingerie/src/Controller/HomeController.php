@@ -6,11 +6,11 @@ use Cake\Network\Http\Client;
 
 class HomeController extends AppController {
 
-    public $helpers = ['ImageModifier'];
-
 	public function index(){
 
 		$this->layout = 'home';
+
+
 
         $http = new Client(['host' => 'ornythorink.alwaysdata.net']);
         $response = $http->get('/index.php/vroum/category/?type=parent');
