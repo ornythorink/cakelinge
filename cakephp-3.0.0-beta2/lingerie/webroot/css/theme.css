@@ -78,6 +78,10 @@ a:hover {
 	font-weight: 400;
 }
 
+#top .container{
+padding-top: 5px;
+}
+
 /* open sans 600 */
 
 #logo {
@@ -178,7 +182,7 @@ h2 {
 
 }
 
-.avatar, .avatar_flw {
+.enseigne, .avatar_flw {
 	position: relative;
 	-webkit-border-radius: 200px;
 	border-radius: 200px;
@@ -320,7 +324,7 @@ h2 {
 
 }
 
-#avatar-top .avatar {
+#avatar-top .enseigne {
 	max-width: 28px;
 	position: absolute;
 	right: 10px;
@@ -333,9 +337,9 @@ h2 {
 	border-bottom: 1px solid #eee;
 }
 
-#header2 h1 {
+#header1 h1 {
 	margin-left: 94px;
-	padding: 0.3em 0;
+	padding: 0.3em 5px;
 }
 
 #header2 h2 {
@@ -1130,7 +1134,7 @@ a.url_edit:hover {
 	margin-right: 15px;
 }
 
-.snippet .avatar {
+.snippet .enseigne{
 	max-width: 28px;
 	top: 2px;
 }
