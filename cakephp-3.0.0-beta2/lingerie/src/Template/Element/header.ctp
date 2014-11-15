@@ -4,7 +4,7 @@
             <div class="row">
                 <div id="info-top" class="col-xs-12 col-sm-3">
                     <div class="enseigne pull-left">
-                        <img src="/webroot/img/logo.png" alt="" />
+                        <img src="<?php echo $assetImg; ?>logo.png" alt="" />
                     </div>
                     <h1>Vanille-Fraise</h1>
                     <h2>
