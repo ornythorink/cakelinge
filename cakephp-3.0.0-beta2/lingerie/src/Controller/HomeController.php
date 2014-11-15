@@ -12,6 +12,7 @@ class HomeController extends AppController {
 
 
 
+
         $http = new Client(['host' => 'ornythorink.alwaysdata.net']);
         $response = $http->get('/index.php/vroum/category/?type=parent');
         $categoriesParent = json_decode($response->body);
