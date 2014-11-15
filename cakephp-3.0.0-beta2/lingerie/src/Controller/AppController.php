@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -26,6 +27,9 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller {
 
+
+protected $assetImg;
+protected $assetJs;
    
 /**
  * Initialization hook method.
@@ -36,7 +40,12 @@ class AppController extends Controller {
  */
 	public function initialize() {
 		$this->loadComponent('Flash');	
-        $this->loadComponent('Cookie', array('expiry' => '1 day'));  
+        $this->loadComponent('Cookie', array('expiry' => '1 day'));
+
+        $this->assetImg = Configure::read('App.envImgUrl') ;
+        $this->assetJs  = Configure::read('App.envJsUrl') ;
+        $this->set( 'assetImg', $this->assetImg);
+        $this->set( 'assetJs', $this->assetJs);
 	}
     
 }

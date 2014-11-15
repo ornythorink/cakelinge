@@ -9,13 +9,13 @@
 
         <div class="row">
             <div class="col-md-4 poster" >
-                <img src="/webroot/img/soutien-gorge.jpg"  />
+                <img src="<?php echo $assetImg; ?>soutien-gorge.jpg"  />
             </div>
             <div class="col-md-4 poster" >
-                <img src="/webroot/img/pyjama-femme2.jpg"  />
+                <img src="<?php echo $assetImg; ?>pyjama-femme2.jpg"  />
             </div>
             <div class="col-md-4 poster" >
-                <img src="/webroot/img/collant.jpg"  />
+                <img src="<?php echo $assetImg; ?>collant.jpg"  />
             </div>
         </div>
         <div class="row">
@@ -33,7 +33,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 poster" >
-                <img src="/webroot/img/collant.jpg"  />
+                <img src="<?php echo $assetImg; ?>collant.jpg"  />
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="/webroot/js/carrousel.js"></script>
+<script src="<?php echo $assetJs; ?>carrousel.js"></script>
 
     <script>
         $(function() {
