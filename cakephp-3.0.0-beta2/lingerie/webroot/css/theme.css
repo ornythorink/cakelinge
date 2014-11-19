@@ -109,6 +109,7 @@ a .logotypo:hover {
 	font-weight: 700;
 }
 
+/*
 h1 {
 	color: #777;
 	font: 28px/30px 'Open Sans', sans-serif;
@@ -117,9 +118,19 @@ h1 {
 
 h1 a {
 	color: #777;
+}*/
+
+.titre{
+    color: #777;
+    font: 28px/30px 'Open Sans', sans-serif;
+    margin: 30px;
 }
 
-h2 {
+.titre a {
+    color: #777;
+}
+
+h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	margin: 0;
@@ -338,11 +349,11 @@ h2 {
 }
 
 #header1 h1 {
-	margin-left: 94px;
-	padding: 0.3em 5px;
+	/*margin-left: 94px;
+	padding: 0.3em 5px;*/
 }
 
-#header2 h2 {
+#header2 h1 {
 	margin-left: 94px;
 }
 
