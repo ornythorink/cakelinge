@@ -1161,15 +1161,35 @@ a.url_edit:hover {
     margin-top:10px;
 }
 
+figure {
+    position: relative;
+    margin: 0 auto; /* to center it */
+    padding: 0 0 0 0;
 
- 
- 
- 
- 
- 
+    font-size: 15px;
+    text-align: center;
+}
+figure div {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    padding: 0;
+}
 
+figure figcaption {
+    position: absolute;
+    bottom: 140px;
+    left: 45px;
+    right: 0;
+    background: black; /* fallback */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#bb000000, endColorstr=#bb000000); /* IE fix */
+    background: rgba(0,0,0,.4); /* transparent background */
+    color: #fff;
+    padding: 10px;    /* padding around text */
+    width:300px;
+    height:100px;
+}
 
- 
  
  
  

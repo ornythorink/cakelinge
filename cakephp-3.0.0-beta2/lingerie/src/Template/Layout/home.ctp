@@ -41,48 +41,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css"/>
 
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <style>
-        .arrow {
-            float: right;
-        }
-        .glyphicon.arrow:before {
-            content: "\e079";
-        }
-        .active > a > .glyphicon.arrow:before {
-            content: "\e114";
-        }
-        .fa.arrow:before {
-            content: "\f104";
-        }
-        .active > a > .fa.arrow:before {
-            content: "\f107";
-        }
-        .plus-times {
-            float: right;
-        }
-        .fa.plus-times:before {
-            content: "\f067";
-        }
-        .active > a > .fa.plus-times {
-            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
-        .plus-minus {
-            float: right;
-        }
-        .fa.plus-minus:before {
-            content: "\f067";
-        }
-        .active > a > .fa.plus-minus:before {
-            content: "\f068";
-        }
-    </style>
+
 
 </head>
 <body>
