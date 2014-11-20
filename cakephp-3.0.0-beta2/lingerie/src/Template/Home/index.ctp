@@ -26,8 +26,8 @@
             <div class="col-md-4 poster" >
                 <img src="<?php echo $assetImg; ?>collant.jpg"  />
                     <figcaption>
-                    <h2>Ne laissez pas filer  l'occasion</h2>
-                    First example caption
+                    <h3>Ne laissez pas filer  l'occasion</h3>
+                     Toutes les promos sur les lots de collants
                     </figcaption>
             </div>
             </figure>

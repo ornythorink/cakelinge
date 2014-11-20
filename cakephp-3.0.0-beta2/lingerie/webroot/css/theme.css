@@ -203,6 +203,7 @@ h1 {
 
 .price {
 	text-align: center;
+    margin-bottom: 10px;
 }
 
 .price > span {
@@ -1194,14 +1195,50 @@ figure figcaption {
     right: 0;
     background: black; /* fallback */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#bb000000, endColorstr=#bb000000); /* IE fix */
-    background: rgba(0,0,0,.4); /* transparent background */
+    background: rgba(0,0,0,.3); /* transparent background */
     color: #fff;
     padding: 10px;    /* padding around text */
     width:300px;
-    height:100px;
+    height:150px;
+    font-weight: bold;
+
 }
 
+figcaption h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Great Vibes', cursive;
+    font-size:42px;
+}
+
+.imgsizer{
+min-height: 257px;
+}
  
- 
- 
- 
+ .prod img{
+max-height: 242px;
+}
+
+.imgsizer { position: relative; border: 1px solid black; width: 200px; height: 200px; }
+.imgsizer img { max-width: 100%; max-height: 100%; }
+.overlay { position: absolute; top: 0; left: 0; right:0; bottom:0; display: none; background-color: rgba(0,0,0,0.5); }
+.imgsizer:hover .overlay { display: block; color:white; font-size:13px;}
+
+hr {
+    display: block;
+    clear: both;
+    height: 0;
+    margin: 40px 0 80px;
+    padding: 0;
+    border: 0;
+    font-family: arial;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+}
+hr:after {
+    content: "\273D \273D \273D";
+    height: 0;
+    letter-spacing: 1em;
+    color: #aaa;
+}
