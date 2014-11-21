@@ -18,17 +18,26 @@
 
 
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-
+                <?php $i=0; ?>
                 <?php foreach($offres as $key => $item): ?>
                 <div itemscope itemtype="http://schema.org/Product" class="prod  col-xs-6 col-sm-3 product " id="<?php echo $item->id_produit;  ?>"  data-product="?php echo $item->id_produit;  ?>">
                     <a class="prod-img" href="<?php echo $item->url;  ?>" target="_blank" >
-                        <img itemprop="image" src="<?php echo $item->imagecache  ?>" alt="REDValentino | Sac à main en cuir Snow White ©Disney | NET-A-PORTER.COM" />
+                        <div class="imgsizer">
+                            <img itemprop="image" src="<?php echo $item->imagecache  ?>" alt="REDValentino | Sac à main en cuir Snow White ©Disney | NET-A-PORTER.COM" />
+                            <div class="overlay"><?php echo $item->long_description; ?></div>
+                        </div>
                     </a>
-                    <div class="price login-box"  ><span><?php echo $item->prix;  ?><span class="euro">€</span></span></div>
-                    <div class="prod-user">
+                    <div class="price login-box"  ><span><?php echo $item->prix;  ?><span class="euro">€</span></span>
                         <a itemprop="brand" href="http://net-a-porter.com" target="_blank" class="url"><?php echo $item->store; ?></a>
                     </div>
-                </div>
+                    <span><?php echo $item->nom; ?></span>
+                  </div>
+                <?php $i++; ?>
+                <?php
+                if (($i % 4) == 0){
+                    echo "<hr>";
+                }
+                ?>
                 <?php endforeach; ?>
 
             </div>
