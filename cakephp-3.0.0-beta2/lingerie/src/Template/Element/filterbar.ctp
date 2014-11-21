@@ -2,7 +2,7 @@
 <div id="sidebar-left" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="margin:0;" >
 
     <ul id="menu2" class="affix">
-        <li class="active"> <a href="#">Menu 0 <span class="glyphicon arrow"></span></a>
+        <li class="active"> <a href="#">Menu 0 <span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul>
                 <li><a href="#">item 0.1</a></li>
                 <li><a href="#">item 0.2</a></li>
