@@ -791,7 +791,7 @@ a#bt-addlist:hover {
 	text-decoration: none;
 }
 
-/
+
 
 
 /* =============================================================================
@@ -1239,7 +1239,7 @@ max-height: 242px;
     background-color: rgba(0,0,0,0.5);
 }
 .imgsizer:hover .overlay {
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     display: block;
     color:white;
     font-size:13px;
