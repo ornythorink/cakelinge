@@ -79,7 +79,6 @@ switch($host):
         break;
 endswitch;
 
-
 try {
 	Configure::config('default', new PhpConfig());
 	Configure::load($env, 'default', false);

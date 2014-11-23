@@ -176,6 +176,7 @@ $config = [
      * easier. Each profile accepts a number of keys. See `Cake\Network\Email\Email`
      * for more information.
      */
+
     'EmailTransport' => [
         'default' => [
             'className' => 'Mail',
@@ -209,9 +210,9 @@ $config = [
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => 'mysql.alwaysdata.com',
-            'username' => '12932_ornythorin',
-            'password' => 'baruk146',
-            'database' => 'ornythorink_lingerie_dev',
+            'username' => '12932_lingerie',
+            'password' => 'boheme144$',
+            'database' => 'ornythorink_lingerie',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
@@ -224,7 +225,7 @@ $config = [
             * decreases performance because each query needs to be traversed and
             * manipulated before being executed.
             */
-            'quoteIdentifiers' => false,
+            'quoteIdentifiers' => true,
 
             /*
             * During development, if using MySQL < 5.6, uncommenting the

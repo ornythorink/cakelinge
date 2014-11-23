@@ -11,14 +11,20 @@
             <figure>
                 <div class="col-md-4 poster" >
                     <img src="<?php echo $assetImg; ?>soutien-gorge.jpg"  />
-                    <figcaption>First example caption</figcaption>
+                    <figcaption>
+                        <h3>Valoriser votre décolleté</h3>
+                        First example caption
+                    </figcaption>
                 </div>
             </figure>
 
             <figure>
                 <div class="col-md-4 poster" >
                     <img src="<?php echo $assetImg; ?>pyjama-femme2.jpg"  />
-                    <figcaption>First example caption</figcaption>
+                    <figcaption>
+                        <h3>Cocoonez vous pour la nuit</h3>
+                        First example caption
+                    </figcaption>
                 </div>
             </figure>
 
