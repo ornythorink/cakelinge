@@ -3,13 +3,13 @@
         <div id="header1" class="container">
             <div class="row">
                 <div id="info-top" class="col-xs-12 col-sm-3">
-                    <div class="avatar pull-left">
-                        <img src="/webroot/img/logo.png" alt="" />
+                    <div class="enseigne pull-left">
+                        <img src="<?php echo $assetImg; ?>logo.png" alt="" />
                     </div>
-                    <h1>Vanille-Fraise</h1>
-                    <h2>
+                    <span class="titre">Vanille-Fraise</span>
+                    <h1>
                         <span class="links"><a href="/">Comparateur de lingerie dédié aux femmes</a></span>
-                    </h2>
+                    </h1>
                 </div>
                 <div class="col-xs-12 col-sm-7">
                     <?php echo $this->element('menu') ?>

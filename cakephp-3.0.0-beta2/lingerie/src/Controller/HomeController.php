@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Controller\AppController;
+
 use Cake\Network\Http\Client;
 
 class HomeController extends AppController {
@@ -9,6 +9,7 @@ class HomeController extends AppController {
 	public function index(){
 
 		$this->layout = 'home';
+
 
 
 
