@@ -44,7 +44,7 @@
 	#menu-user ul li { display: none; }
 	#menu-user ul #avatar-top { display: inline-block; }
 	#menu-user ul li a { border: none; }
-	#info-top .enseigne { width: 40px; height: 40px; margin-right:10px;}
+	#info-top .avatar { width: 40px; height: 40px; }
 	#header2 h1 { margin-left: 48px; margin-top: -10px; font-size: 14px; padding-bottom: 4px;}
 	#header2 h2 { display: none; }
 	

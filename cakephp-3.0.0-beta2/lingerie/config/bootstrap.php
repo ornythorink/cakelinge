@@ -19,14 +19,6 @@
  */
 require __DIR__ . '/paths.php';
 
-
-/*
-require_once('../plugins/Environment/cakephp-environment/Lib/Environment.php');
-
-Environment::init();
-
-debug(Config('env'), true);*/
-
 // Use composer to load the autoloader.
 require ROOT . DS . 'vendor' . DS . 'autoload.php';
 
@@ -64,25 +56,9 @@ use Cake\Utility\Security;
  * idea to create multiple configuration files, and separate the configuration
  * that changes from configuration that does not. This makes deployment simpler.
  */
-
-$host =  $_SERVER["HTTP_HOST"];
-
-switch($host):
-    case 'localhost':
-        $env = 'dev';
-        break;
-    case 'dev.ornythorink.net':
-        $env = 'fake';
-        break;
-    case 'vanille-fraise.com':
-        $env = 'production';
-        break;
-endswitch;
-
-
 try {
 	Configure::config('default', new PhpConfig());
-	Configure::load($env, 'default', false);
+	Configure::load('app', 'default', false);
 } catch (\Exception $e) {
 	die($e->getMessage() . "\n");
 }
@@ -198,6 +174,8 @@ Plugin::load('FOC/Authenticate', ['bootstrap' => true]);
 Plugin::load('DebugKit', array('bootstrap' => true));
 Plugin::load('FOC/Authenticate');
 Plugin::load('Bootstrap3');
+
+
 
 
 /**

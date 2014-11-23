@@ -55,7 +55,7 @@ class CategorieController extends AppController {
 
             // FAAAAAKKKKKKEEEE
             // @todo faire un vrai fake
-            //$image->imagecache = 'http://localhost/tmp/cache/images/333c84a09b466485b6f9326abb9f687d.jpg';
+            $image->imagecache = 'http://localhost/tmp/cache/images/333c84a09b466485b6f9326abb9f687d.jpg';
 
 
             if($image->imagecache != '' && $image->imagecache != null){

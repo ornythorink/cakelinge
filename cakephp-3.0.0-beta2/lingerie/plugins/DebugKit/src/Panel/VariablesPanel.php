@@ -17,11 +17,7 @@ use Cake\Database\Query;
 use Cake\Datasource\EntityInterface;
 use Cake\Event\Event;
 use Cake\Utility\Hash;
-use Closure;
 use DebugKit\DebugPanel;
-use Exception;
-use PDO;
-use SimpleXmlElement;
 
 /**
  * Provides debug information on the View variables.
@@ -64,38 +60,18 @@ class VariablesPanel extends DebugPanel {
 	public function shutdown(Event $event) {
 		$controller = $event->subject();
 		$errors = [];
-		array_walk_recursive($controller->viewVars, function (&$item) {
+		$vars = $controller->viewVars;
+		foreach ($vars as $k => $v) {
 			// Execute queries so we can show the results in the toolbar.
-			if ($item instanceof Query) {
-				$item = $item->all();
-			}
-			if (
-				$item instanceof Closure ||
-				$item instanceof PDO ||
-				$item instanceof SimpleXmlElement
-			) {
-				$item = 'Unserializable object - ' . get_class($item);
-			}
-			if ($item instanceof Exception) {
-				$item = sprintf('Unserializable object - %s. Error: %s in %s, line %s',
-					get_class($item),
-					$item->getMessage(),
-					$item->getFile(),
-					$item->getLine()
-				);
-			}
-			return $item;
-		});
-
-		foreach ($controller->viewVars as $k => $v) {
-			// Get the validation errors for Entity
-			if ($v instanceof EntityInterface) {
+			if ($v instanceof Query) {
+				$vars[$k] = $v->all();
+			} elseif ($v instanceof EntityInterface) {
+				// Get the validation errors for Entity
 				$errors[$k] = $this->_getErrors($v);
 			}
 		}
-
 		$this->_data = [
-			'content' => $controller->viewVars,
+			'content' => $vars,
 			'errors' => $errors
 		];
 	}

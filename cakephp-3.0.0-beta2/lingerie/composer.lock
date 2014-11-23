@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "071183d7b4651ca827d7f29a08006c7b",
+    "hash": "9c3e736ad02c18b61b7dc03aa4a3bf08",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -131,12 +131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "96ccb9162c447881bcf63f6d38b1337a1df5e421"
+                "reference": "fc4d692a19b90a4b1faad5719ec731321d323700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/96ccb9162c447881bcf63f6d38b1337a1df5e421",
-                "reference": "96ccb9162c447881bcf63f6d38b1337a1df5e421",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/fc4d692a19b90a4b1faad5719ec731321d323700",
+                "reference": "fc4d692a19b90a4b1faad5719ec731321d323700",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-11-14 21:27:08"
+            "time": "2014-10-25 19:25:23"
         },
         {
             "name": "cakephp/debug_kit",
@@ -213,7 +213,9 @@
             },
             "type": "cakephp-plugin",
             "extra": {
-                "installer-name": "DebugKit"
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -642,43 +644,6 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
-        },
-        {
-            "name": "quest/cakephp-environment",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/quest/cakephp-environment.git",
-                "reference": "2363a6d77424eb5463aad7f32a266c757b463035"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/quest/cakephp-environment/zipball/2363a6d77424eb5463aad7f32a266c757b463035",
-                "reference": "2363a6d77424eb5463aad7f32a266c757b463035",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*"
-            },
-            "type": "cakephp-environment",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Victor San Martín",
-                    "homepage": "http://twitter.com/questchile"
-                }
-            ],
-            "description": "Environments Plugin for CakePHP",
-            "homepage": "http://victorsanmartin.com",
-            "keywords": [
-                "cakephp",
-                "environments",
-                "utility"
-            ],
-            "time": "2014-07-03 17:38:38"
         }
     ],
     "packages-dev": [
