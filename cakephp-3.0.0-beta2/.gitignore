@@ -1,7 +1,4 @@
-*.class
-*.pyc
-*.pyo
-.metadata
-.settings
-.project
-
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
