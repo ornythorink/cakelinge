@@ -51,49 +51,53 @@ class CategorieController extends AppController {
 
         $produits = TableRegistry::get('Produits');
 
+        /*
+        echo '<pre>';
+        var_dump($items);
+        echo '</pre>';
+        exit;*/
+
         foreach($items as $key => $image){
 
             // FAAAAAKKKKKKEEEE
             // @todo faire un vrai fake
-            //$image->imagecache = 'http://localhost/tmp/cache/images/333c84a09b466485b6f9326abb9f687d.jpg';
+            //$image->imagecache = 'http://localhost/tmp/cache/images/3cdc44283f05a90ab78b9db13cf11fac.jpg';
+            //@todo if null
+                  if ($image->imagecache != '' && $image->imagecache != null) {
 
+                        $image->longimage = $image->imagecache;
+                        $image->mediumimage = $image->imagecache;
+                        $image->petiteimage = $image->imagecache;
 
-            if($image->imagecache != '' && $image->imagecache != null){
+                    } else {
+                        if (($image->longimage !== null && $image->longimage != '') && $image->imagecache == null) {
+                            $cached = $this->resizeImage($image->longimage, true);
+                            $items[$key]->imagecache = $cached;
 
-                $image->longimage   = $image->imagecache;
-                $image->mediumimage = $image->imagecache;
-                $image->petiteimage = $image->imagecache;
+                            $produit = $produits->get($image->id_produit);
+                            $produit->imagecache = $cached;
+                            $produits->save($produit);
 
-            } else {
-                if (($image->longimage !== null && $image->longimage != '') && $image->imagecache == null) {
-                    $cached  = $this->resizeImage($image->longimage, true);
-                    $items[$key]->imagecache = $cached;
+                        } elseif (($image->mediumimage !== null && $image->mediumimage != '') && $image->imagecache == null) {
+                            $cached = $this->resizeImage($image->mediumimage, true);
+                            $items[$key]->imagecache = $cached;
 
-                    $produit = $produits->get($image->id_produit);
-                    $produit->imagecache = $cached;
-                    $produits->save($produit);
+                            $produit = $produits->get($image->id_produit);
+                            $produit->imagecache = $cached;
+                            $produits->save($produit);
 
-                } elseif (($image->mediumimage !== null && $image->mediumimage != '') && $image->imagecache == null) {
-                    $cached = $this->resizeImage($image->mediumimage, true);
-                    $items[$key]->imagecache = $cached;
+                        } elseif (($image->petiteimage !== null && $image->petiteimage != '') && $image->imagecache == null) {
+                            $cached = $this->resizeImage($image->petiteimage, true);
+                            $items[$key]->imagecache = $cached;
 
-                    $produit = $produits->get($image->id_produit);
-                    $produit->imagecache = $cached;
-                    $produits->save($produit);
+                            $produit = $produits->get($image->id_produit);
+                            $produit->imagecache = $cached;
+                            $produits->save($produit);
+                        }
+                    }
 
-                } elseif (($image->petiteimage !== null && $image->petiteimage != '') && $image->imagecache == null) {
-                    $cached = $this->resizeImage($image->petiteimage, true);
-                    $items[$key]->imagecache = $cached;
-
-                    $produit = $produits->get($image->id_produit);
-                    $produit->imagecache = $cached;
-                    $produits->save($produit);
-                }
             }
-        }
 
-        //$content = $this->getSDCbyCategory();
-        /* @todo shuffle ?  */
 
         $this->set( 'offres', $items);
 
