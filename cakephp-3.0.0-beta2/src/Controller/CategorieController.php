@@ -5,7 +5,7 @@ namespace App\Controller;
 use Cake\Network\Http\Client;
 use Cake\Filesystem\File;
 use Cake\ORM\TableRegistry;
-
+use Cake\Core\Configure;
 
 class CategorieController extends AppController {
 
@@ -19,16 +19,19 @@ class CategorieController extends AppController {
      */
     public function index(){
 
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
-        $response = $http->get('/index.php/vroum/category/?type=parent');
+        $host = Configure::read('App.webservice') ;
+        $dirHost = Configure::read('App.dirWS') ;
+
+        $http = new Client(['host' => $host]);
+        $response = $http->get($dirHost.'/index.php/vroum/category/?type=parent');
         $categoriesParent = json_decode($response->body);
 
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
-        $response = $http->get('/index.php/vroum/category/?type=child');
+        $http = new Client(['host' => $host]);
+        $response = $http->get($dirHost.'/index.php/vroum/category/?type=child');
         $categoriesChild = json_decode($response->body);
 
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
-        $response = $http->get('/index.php/vroum/category/?type=sub');
+        $http = new Client(['host' => $host]);
+        $response = $http->get($dirHost.'/index.php/vroum/category/?type=sub');
         $categoriesSub = json_decode($response->body);
 
         $this->set('categoriesParent', $categoriesParent);
