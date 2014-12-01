@@ -62,14 +62,14 @@ class CategorieController extends AppController {
             // FAAAAAKKKKKKEEEE
             // @todo faire un vrai fake
             //$image->imagecache = 'http://localhost/tmp/cache/images/3cdc44283f05a90ab78b9db13cf11fac.jpg';
-            //@todo if null
-                  if ($image->imagecache != '' && $image->imagecache != null) {
+            if($image !== null) {
+                if ($image->imagecache != '' && $image->imagecache != null) {
 
-                        $image->longimage = $image->imagecache;
-                        $image->mediumimage = $image->imagecache;
-                        $image->petiteimage = $image->imagecache;
+                    $image->longimage = $image->imagecache;
+                    $image->mediumimage = $image->imagecache;
+                    $image->petiteimage = $image->imagecache;
 
-                    } else {
+                } else {
                         if (($image->longimage !== null && $image->longimage != '') && $image->imagecache == null) {
                             $cached = $this->resizeImage($image->longimage, true);
                             $items[$key]->imagecache = $cached;
@@ -95,7 +95,9 @@ class CategorieController extends AppController {
                             $produits->save($produit);
                         }
                     }
-
+                } else {
+                    unset($items[$key]);
+                }
             }
 
 
@@ -147,6 +149,8 @@ class CategorieController extends AppController {
         $infos_image = getImageSize($url);
 
         $rand  = rand(1,10000000);
+
+
             $file = new File( $this->imgCachePath . 'img'. $rand . '.' . strtolower($extensions[$infos_image[2]]));
             $file->write($content);
 
