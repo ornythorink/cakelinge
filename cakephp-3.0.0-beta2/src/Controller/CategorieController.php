@@ -26,11 +26,9 @@ class CategorieController extends AppController {
         $response = $http->get($dirHost.'/index.php/vroum/category/?type=parent');
         $categoriesParent = json_decode($response->body);
 
-        $http = new Client(['host' => $host]);
         $response = $http->get($dirHost.'/index.php/vroum/category/?type=child');
         $categoriesChild = json_decode($response->body);
 
-        $http = new Client(['host' => $host]);
         $response = $http->get($dirHost.'/index.php/vroum/category/?type=sub');
         $categoriesSub = json_decode($response->body);
 
@@ -43,7 +41,6 @@ class CategorieController extends AppController {
 
         $term = urldecode($this->request->query['term']);
 
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
         $response = $http->get( '/index.php/vroum/produits/produitsCategory/?term=' . $term . '&offset=20');
         $tail = "";
         if($rest = substr($response->body, -1) != "]" ) {

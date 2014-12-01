@@ -10,18 +10,15 @@ class HomeController extends AppController {
 
 		$this->layout = 'home';
 
-
-
-
         $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
         $response = $http->get('/index.php/vroum/category/?type=parent');
         $categoriesParent = json_decode($response->body);
 
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
+
         $response = $http->get('/index.php/vroum/category/?type=child');
         $categoriesChild = json_decode($response->body);
 
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
+
         $response = $http->get('/index.php/vroum/category/?type=sub');
         $categoriesSub = json_decode($response->body);
 
@@ -29,8 +26,6 @@ class HomeController extends AppController {
         $this->set('categoriesChild', $categoriesChild);
         $this->set('categoriesSub', $categoriesSub);
 
-
-        $http = new Client(['host' => 'vroum2.comparateur-lingerie.fr']);
         $response = $http->get('/index.php/vroum/produits/home/');
         $tail = "";
         if($rest = substr($response->body, -1) != "]" ) {
