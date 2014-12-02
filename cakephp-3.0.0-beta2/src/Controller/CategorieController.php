@@ -47,17 +47,11 @@ class CategorieController extends AppController {
             $tail = "]";
         }
 
-        $items = json_decode($response->body.$tail);
+        $items = json_decode($response->body);
 
         $produits = TableRegistry::get('Produits');
 
-        /*
-        echo '<pre>';
-        var_dump($items);
-        echo '</pre>';
-        exit;*/
-
-        foreach($items as $key => $image){
+        foreach($items->items as $key => $image){
 
             // FAAAAAKKKKKKEEEE
             // @todo faire un vrai fake
@@ -101,8 +95,8 @@ class CategorieController extends AppController {
             }
 
 
-        $this->set( 'offres', $items);
-
+        $this->set( 'offres' , $items->items);
+        $this->set( 'marques', $items->marques);
     }
 
 

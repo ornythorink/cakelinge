@@ -2,12 +2,11 @@
 <div id="sidebar-left" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="margin:0;" >
 
     <ul id="menu2" class="affix">
-        <li class="active"> <a href="#">Menu 0 <span class="glyphicon glyphicon-chevron-down"></span></a>
+        <li class="active"> <a href="#">Marques<span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul>
-                <li><a href="#">item 0.1</a></li>
-                <li><a href="#">item 0.2</a></li>
-                <li><a href="http://onokumus.com">onokumus</a></li>
-                <li><a href="#">item 0.4</a></li>
+            <?php foreach($marques as $marque):  ?>
+                <li><a href="#"><?php echo $marque; ?></a></li>
+            <?php endforeach; ?>
             </ul>
         </li>
         <li> <a href="#">Menu 1 <span class="glyphicon arrow"></span></a>
