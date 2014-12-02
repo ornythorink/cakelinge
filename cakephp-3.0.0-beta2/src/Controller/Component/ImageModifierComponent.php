@@ -224,7 +224,7 @@ class ImageModifierComponent extends Component{
         // Creating an image
         switch ( $mimeType ) {
             case 'image/gif'             : $image = imagecreatefromgif($srcFs); break;
-            case 'image/jpeg'            : $image = @imagecreatefromjpeg($srcFs); break;
+            case 'image/jpeg'            : $image = imagecreatefromjpeg($srcFs); break;
             case 'image/png'             : $image = imagecreatefrompng($srcFs); break;
             case 'image/vnd.wap.wbmp'    : $image = imagecreatefromwbmp($srcFs); break;
             case 'image/image/x-xbitmap' : $image = imagecreatefromxbm($srcFs); break;
