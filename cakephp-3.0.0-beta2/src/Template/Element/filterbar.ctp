@@ -1,45 +1,21 @@
 
 <div id="sidebar-left" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="margin:0;" >
-
+    <form>
     <ul id="menu2" class="affix">
         <li class="active"> <a href="#">Marques<span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul>
             <?php foreach($marques as $marque):  ?>
-                <li><a href="#"><?php echo $marque; ?></a></li>
+                <li><span><a href="#"><input type="checkbox"  name="marque" value="<?php echo $marque; ?>" /> <?php echo $marque; ?></a></span></a></li>
             <?php endforeach; ?>
             </ul>
         </li>
-        <li> <a href="#">Menu 1 <span class="glyphicon arrow"></span></a>
+        <li> <a href="#">Boutiques<span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul>
-                <li><a href="#">item 1.1</a></li>
-                <li><a href="#">item 1.2</a></li>
-                <li> <a href="#">Menu 1.3 <span class="glyphicon arrow"></span></a>
-                    <ul>
-                        <li><a href="#">item 1.3.1</a></li>
-                        <li><a href="#">item 1.3.2</a></li>
-                        <li><a href="#">item 1.3.3</a></li>
-                        <li><a href="#">item 1.3.4</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">item 1.4</a></li>
-                <li> <a href="#">Menu 1.5 <span class="glyphicon arrow"></span></a>
-                    <ul>
-                        <li><a href="#">item 1.5.1</a></li>
-                        <li><a href="#">item 1.5.2</a></li>
-                        <li><a href="#">item 1.5.3</a></li>
-                        <li><a href="#">item 1.5.4</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li> <a href="#">Menu 2</a>
-            <ul>
-                <li><a href="#">item 2.1</a></li>
-                <li><a href="#">item 2.2</a></li>
-                <li><a href="#">item 2.3</a></li>
-                <li><a href="#">item 2.4</a></li>
+                <?php foreach($boutiques as $boutique):  ?>
+                <li><span><a href="#"><input type="checkbox"  name="boutique" value="<?php echo $boutique; ?>" /> <?php echo $boutique; ?></a></span></a></li>
+                <?php endforeach; ?>
             </ul>
         </li>
     </ul>
-
+    </form>
 </div>

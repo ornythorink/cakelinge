@@ -97,6 +97,7 @@ class CategorieController extends AppController {
 
         $this->set( 'offres' , $items->items);
         $this->set( 'marques', $items->marques);
+        $this->set( 'boutiques', $items->boutique);
     }
 
 
