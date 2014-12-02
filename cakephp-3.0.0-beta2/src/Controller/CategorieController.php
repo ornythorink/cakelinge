@@ -53,9 +53,6 @@ class CategorieController extends AppController {
 
         foreach($items->items as $key => $image){
 
-            // FAAAAAKKKKKKEEEE
-            // @todo faire un vrai fake
-            //$image->imagecache = 'http://localhost/tmp/cache/images/3cdc44283f05a90ab78b9db13cf11fac.jpg';
             if($image !== null) {
                 if ($image->imagecache != '' && $image->imagecache != null) {
 

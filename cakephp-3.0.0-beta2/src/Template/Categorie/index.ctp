@@ -43,9 +43,10 @@
             </div>
         </div>
     </div>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="<?php echo $assetJs; ?>metisMenu.js"></script>
+    <script src="<?php echo $assetJs; ?>taffy-min.js"></script>
     <script>
         $(function () {
             $('#menu2').metisMenu({
@@ -53,3 +54,4 @@
             });
         });
     </script>
+    <script src="<?php echo $assetJs; ?>metisMenu.js"></script>
