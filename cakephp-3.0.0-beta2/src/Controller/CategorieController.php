@@ -63,7 +63,7 @@ class CategorieController extends AppController {
                 } else {
                         if (($image->longimage !== null && $image->longimage != '') && $image->imagecache == null) {
                             $cached = $this->resizeImage($image->longimage, true);
-                            $items[$key]->imagecache = $cached;
+                            $items->items[$key]->imagecache = $cached;
 
                             $produit = $produits->get($image->id_produit);
                             $produit->imagecache = $cached;
@@ -71,7 +71,7 @@ class CategorieController extends AppController {
 
                         } elseif (($image->mediumimage !== null && $image->mediumimage != '') && $image->imagecache == null) {
                             $cached = $this->resizeImage($image->mediumimage, true);
-                            $items[$key]->imagecache = $cached;
+                            $items->items[$key]->imagecache = $cached;
 
                             $produit = $produits->get($image->id_produit);
                             $produit->imagecache = $cached;
@@ -79,7 +79,7 @@ class CategorieController extends AppController {
 
                         } elseif (($image->petiteimage !== null && $image->petiteimage != '') && $image->imagecache == null) {
                             $cached = $this->resizeImage($image->petiteimage, true);
-                            $items[$key]->imagecache = $cached;
+                            $items->items[$key]->imagecache = $cached;
 
                             $produit = $produits->get($image->id_produit);
                             $produit->imagecache = $cached;
@@ -92,9 +92,10 @@ class CategorieController extends AppController {
             }
 
 
-        $this->set( 'offres' , $items->items);
-        $this->set( 'marques', $items->marques);
-        $this->set( 'boutiques', $items->boutique);
+        $this->set( 'offres' ,  $items->items);
+        $this->set( 'marques',  $items->marques);
+        $this->set( 'boutiques',$items->boutique);
+        $this->set( 'json' ,    $response->body);
     }
 
 

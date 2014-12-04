@@ -5,7 +5,7 @@
         <li class="active"> <a href="#">Marques<span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul>
             <?php foreach($marques as $marque):  ?>
-                <li><span><a href="#"><input type="checkbox"  name="marque" value="<?php echo $marque; ?>" /> <?php echo $marque; ?></a></span></a></li>
+                <li><span><a href="#"><input  type="checkbox"   name="marque" multiple value="<?php echo $marque; ?>" /> <?php echo $marque; ?></a></span></a></li>
             <?php endforeach; ?>
             </ul>
         </li>

@@ -33,9 +33,9 @@ class HomeController extends AppController {
         }
 
 
-        $produits = json_decode($response->body.$tail);
+        $produits = json_decode($response->body);
 
-        foreach($produits as $image){
+        foreach($produits->items as $image){
 
             if($image->imagecache != '' && $image->imagecache != null){
                 $image->longimage   = $image->imagecache;
@@ -44,7 +44,7 @@ class HomeController extends AppController {
             }
         }
 
-        $this->set( 'offres', $produits);
+        $this->set( 'offres', $produits->items );
 
 	}
 }

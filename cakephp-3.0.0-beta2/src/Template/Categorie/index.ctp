@@ -23,12 +23,12 @@
                 <div class="prod  col-xs-6 col-sm-3 product " id="<?php echo $item->id_produit;  ?>"  data-product="<?php echo $item->id_produit;  ?>">
                     <a class="prod-img" href="<?php echo $item->url;  ?>" target="_blank" >
                         <div class="imgsizer">
-                            <img itemprop="image" src="<?php echo $item->imagecache  ?>" alt="" />
+                            <img  src="<?php echo $item->imagecache  ?>" alt="" />
                             <div class="overlay"><?php echo $item->long_description; ?></div>
                         </div>
                     </a>
                     <div class="price login-box"  ><span><?php echo $item->prix;  ?><span class="euro">€</span></span>
-                        <a itemprop="brand" href="http://net-a-porter.com" target="_blank" class="url"><?php echo $item->store; ?></a>
+                        <a  href="http://net-a-porter.com" target="_blank" class="url"><?php echo $item->store; ?></a>
                     </div>
                     <span><?php echo $item->nom; ?></span>
                 </div>
@@ -55,3 +55,29 @@
         });
     </script>
     <script src="<?php echo $assetJs; ?>metisMenu.js"></script>
+    <script>
+        var json = <?php echo $json; ?>;
+        var products = TAFFY(json);
+
+        /*var countChecked = function() {
+           var n =  $( "input[type=checkbox][name='marque']:checked" ).val();
+       };
+
+        $( "input[type=checkbox][name='marque']" ).on( "click", countChecked );*/
+
+        $(window).load(function(){
+            (function( $ ){
+                $.fn.valList = function(){
+                    return $.map( this, function (elem) {
+                        return elem.value || "";
+                    }).join( "," );
+                };
+            })( jQuery );
+
+            $( "input[type=checkbox][name='marque']" ).click(function(){
+                //alert($( "input[type=checkbox][name='marque']:checked" ).valList());
+                $( "div[]").remove();
+            });
+        });
+
+    </script>
