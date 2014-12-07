@@ -14,9 +14,7 @@ class CategorieController extends AppController {
         $this->loadComponent('ImageModifier');
     }
 
-    /**
-     * @todo factoriser les appels clients
-     */
+
     public function index(){
 
         $host = Configure::read('App.webservice') ;
@@ -42,10 +40,6 @@ class CategorieController extends AppController {
         $term = urldecode($this->request->query['term']);
 
         $response = $http->get( '/index.php/vroum/produits/produitsCategory/?term=' . $term . '&offset=20');
-        $tail = "";
-        if($rest = substr($response->body, -1) != "]" ) {
-            $tail = "]";
-        }
 
         $items = json_decode($response->body);
 
@@ -96,6 +90,15 @@ class CategorieController extends AppController {
         $this->set( 'marques',  $items->marques);
         $this->set( 'boutiques',$items->boutique);
         $this->set( 'json' ,    $response->body);
+
+        // pagination
+        $totalCount = count($items->items);
+        $limit = 40;
+
+        $this->set( 'totalCount' ,  $totalCount);
+        $this->set( 'limit' ,       $limit);
+        $pageCount = (int)ceil($totalCount / $limit);
+        $this->set( 'pageCount' ,  $pageCount);
     }
 
 

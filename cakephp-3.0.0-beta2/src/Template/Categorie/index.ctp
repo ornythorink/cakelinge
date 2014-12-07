@@ -1,5 +1,3 @@
-
-
 <?php echo $this->element('header') ?>
 <br/>
 <br/>
@@ -20,7 +18,8 @@
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <?php $i=0; ?>
                 <?php foreach($offres as $key => $item): ?>
-                <div class="prod  col-xs-6 col-sm-3 product " id="<?php echo $item->id_produit;  ?>"  data-product="<?php echo $item->id_produit;  ?>">
+                <div class="prod col-xs-6 col-sm-3 product" id="<?php echo $item->id_produit;  ?>"  data-product="<?php echo $item->id_produit;  ?>">
+                    <span class="marque" style="display:none;"><?php echo $item->marque; ?></span>
                     <a class="prod-img" href="<?php echo $item->url;  ?>" target="_blank" >
                         <div class="imgsizer">
                             <img  src="<?php echo $item->imagecache  ?>" alt="" />
@@ -34,11 +33,21 @@
                 </div>
                 <?php $i++; ?>
                 <?php
-                if (($i % 4) == 0){
+                if ( (($i % 4) == 0) || $i == $limit){
                     echo "<hr>";
+                    if($i == $limit){
+                        break;
+                    }
                 }
                 ?>
                 <?php endforeach; ?>
+
+                <div>
+                    <ul class="pagination pagination-lg pager" id="myPager">
+                        <?php for():  ?>
+                        <li><a href="/index.php/whitelist?page=2&amp;source=eff"></a></li>
+                    </ul>
+                </div>
 
             </div>
         </div>
@@ -55,29 +64,3 @@
         });
     </script>
     <script src="<?php echo $assetJs; ?>metisMenu.js"></script>
-    <script>
-        var json = <?php echo $json; ?>;
-        var products = TAFFY(json);
-
-        /*var countChecked = function() {
-           var n =  $( "input[type=checkbox][name='marque']:checked" ).val();
-       };
-
-        $( "input[type=checkbox][name='marque']" ).on( "click", countChecked );*/
-
-        $(window).load(function(){
-            (function( $ ){
-                $.fn.valList = function(){
-                    return $.map( this, function (elem) {
-                        return elem.value || "";
-                    }).join( "," );
-                };
-            })( jQuery );
-
-            $( "input[type=checkbox][name='marque']" ).click(function(){
-                //alert($( "input[type=checkbox][name='marque']:checked" ).valList());
-                $( "div[]").remove();
-            });
-        });
-
-    </script>
